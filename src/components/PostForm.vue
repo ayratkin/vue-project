@@ -1,6 +1,6 @@
 <template>
   <form class="form" @submit.prevent>
-    <div class="fromTitle">Adding a new post</div>
+    <div class="formTitle">Adding a new task</div>
 
     <app-input
         v-model="post.title"
@@ -15,7 +15,7 @@
           placeholder="Write a desc..."
       />
 
-        <app-button
+        <app-button class="addPostBtn"
             @click="addPost"
         >
           Добавить
@@ -56,12 +56,18 @@ export default {
 <style scoped>
 
 .form {
-  margin: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
-.fromTitle {
-  font-weight: bold;
+.formTitle {
+  margin-bottom: 15px;
 }
 
+.addPostBtn {
+  margin-top: 15px;
+}
 
 </style>

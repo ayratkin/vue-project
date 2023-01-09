@@ -2,7 +2,9 @@
   <single-post
       v-for="post in posts"
       :post="post"
+      @removePost="removePost"
   />
+
 </template>
 
 <script>
@@ -16,6 +18,12 @@ export default {
     posts: {
       type: Array,
       required: true,
+    }
+  },
+
+  methods: {
+    removePost(id) {
+      this.$emit('removePost', id)
     }
   }
 
